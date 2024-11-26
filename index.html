@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/app.css">
+  <title>Отслеживание грузов</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/2979/2979602.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        Отслеживания грузов
+      </a>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="title-btn-wrapper">
+      <h1 class="mb-4">Отслеживание грузов</h1>
+      <button class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#addCargoModal">
+        Добавить новый груз
+      </button>
+    </div>
+
+    <!-- Фильтр -->
+    <div class="mb-4">
+      <label for="filterStatus" class="form-label">Фильтр по статусу</label>
+      <select id="filterStatus" class="form-select">
+        <option value="">Все</option>
+        <option value="Ожидает отправки">Ожидает отправки</option>
+        <option value="В пути">В пути</option>
+        <option value="Доставлен">Доставлен</option>
+      </select>
+    </div>
+
+    <!-- Таблица -->
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Название</th>
+          <th>Статус</th>
+          <th>Откуда</th>
+          <th>Куда</th>
+          <th>Дата отправления</th>
+        </tr>
+      </thead>
+      <tbody id="cargoTable">
+        <!-- Динамические данные -->
+      </tbody>
+    </table>
+
+
+
+    <div id="alertsContainer" class="mt-4 alert"></div>
+  </div>
+
+  <!-- Модальное окно -->
+  <div class="modal fade" id="addCargoModal" tabindex="-1" aria-labelledby="addCargoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addCargoModalLabel">Добавить новый груз</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <form id="cargoForm">
+            <div class="mb-3">
+              <label for="cargoName" class="form-label">Название груза</label>
+              <input type="text" class="form-control" id="cargoName" required>
+            </div>
+            <div class="mb-3">
+              <label for="origin" class="form-label">Пункт отправления</label>
+              <select class="form-select" id="origin" required>
+                <option value="">Выберите город</option>
+                <option value="Москва">Москва</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                <option value="Казань">Казань</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="destination" class="form-label">Пункт назначения</label>
+              <select class="form-select" id="destination" required>
+                <option value="">Выберите город</option>
+                <option value="Екатеринбург">Екатеринбург</option>
+                <option value="Казань">Казань</option>
+                <option value="Санкт-Петербург">Санкт-Петербург</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="departureDate" class="form-label">Дата отправления</label>
+              <input type="date" class="form-control" id="departureDate" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Добавить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
