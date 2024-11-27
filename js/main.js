@@ -9,11 +9,27 @@ const cargoList = [
   },
   {
     id: "CARGO002",
+    name: "Фруктовый груз",
+    status: "Доставлен",
+    origin: "Санкт-Петербург",
+    destination: "Москва",
+    departureDate: "2024-02-12",
+  },
+  {
+    id: "CARGO003",
     name: "Хрупкий груз",
     status: "Ожидает отправки",
     origin: "Санкт-Петербург",
     destination: "Екатеринбург",
     departureDate: "2024-11-26",
+  },
+  {
+    id: "CARGO004",
+    name: "Канстовары",
+    status: "Ожидает отправки",
+    origin: "Санкт-Петербург",
+    destination: "Екатеринбург",
+    departureDate: "2024-04-26",
   },
 ];
 
